@@ -3,9 +3,10 @@ bits 32
 global _start
 
 section .data
-ask_number db 'Entrez un nombre : ', 20
-number_is_not_prime db "N'est pas un nombre premier", 28
-number_is_prime db 'Est un nombre premier', 22
+ask_number db 'Entrez un nombre : '
+number_is_prime db 'Est un nombre premier', 10
+number_is_not_prime db "N'est pas un nombre premier", 10
+
 
 
 section .bss
@@ -20,7 +21,7 @@ _msg1:
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, ask_number
-    mov     edx, 20
+    mov     edx, 19
     int     0x80
     leave
     ret
@@ -143,7 +144,7 @@ _start:
     cmp     ecx, 0
     je      _is_prime
     cmp     ecx, 1
-    je      _is_prime
+    je      _is_not_prime
     mov     edx, 0
     mov     eax, [loop_iteration]
     mov     ecx, 2
