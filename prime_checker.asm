@@ -141,9 +141,9 @@ _start:
     call    _atoi
     mov     ecx, [loop_iteration]
     cmp     ecx, 0
-    je      _is_not_prime
+    je      _is_prime
     cmp     ecx, 1
-    je      _is_not_prime
+    je      _is_prime
     mov     edx, 0
     mov     eax, [loop_iteration]
     mov     ecx, 2
