@@ -5,7 +5,7 @@ global _start
 section .data
 ask_number db 'Entrez un nombre : ', 20
 number_is_not_prime db "N'est pas un nombre premier", 28
-number_is_prime db 'Est un nombre premier', 21
+number_is_prime db 'Est un nombre premier', 22
 
 
 section .bss
@@ -42,7 +42,7 @@ enter   0,0
 mov     eax, 4
 mov     ebx, 1
 mov     ecx, number_is_prime
-mov     edx, 21
+mov     edx, 22
 int     0x80
 leave
 ret
